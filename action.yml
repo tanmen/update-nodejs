@@ -1,0 +1,21 @@
+name: Update Nodejs
+description: This is an action to update nodejs
+branding:
+  icon: arrow-up-circle
+  color: blue
+inputs:
+  github-token:
+    description: Github Token
+    required: true
+  mode:
+    description: >
+      Update mode ('lts', 'all', 'major', 'minor')
+      lts: lts version only update(include major update)
+      all: all version update
+      major: minor and patch version update
+      minor: patch version update
+    required: false
+    default: lts
+runs:
+  using: node16
+  main: dist/index.js
